@@ -1,5 +1,113 @@
-template-repository (1.0-1) unstable; urgency=medium
+libpanel (1.6.0-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload
+  * New upstream release
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Amin Bandali <bandali@ubuntu.com>  Tue, 19 Mar 2024 09:56:06 -0400
+
+libpanel (1.5.1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+    - Fix CSS clipping with frame switcher buttons
+
+ -- Amin Bandali <bandali@ubuntu.com>  Thu, 07 Mar 2024 12:09:27 -0500
+
+libpanel (1.5.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 21 Feb 2024 22:36:17 -0500
+
+libpanel (1.4.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Stop using debian/control.in and dh_gnome_clean
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Tue, 09 Jan 2024 13:34:49 -0500
+
+libpanel (1.4.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 18 Sep 2023 07:59:46 -0400
+
+libpanel (1.3.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 01 Sep 2023 14:56:03 -0400
+
+libpanel (1.3.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/libpanel-1-1.symbols: Add new symbols
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 09 Aug 2023 19:30:24 -0400
+
+libpanel (1.2.0-2) unstable; urgency=medium
+
+  * Update standards version to 4.6.2, no changes needed
+  * Release to unstable
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 21 Jul 2023 13:15:46 -0400
+
+libpanel (1.2.0-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 27 Mar 2023 10:11:17 -0400
+
+libpanel (1.1.2-1) experimental; urgency=medium
+
+  * New upstream release
+  * debian/control.in: Bump glib, gtk4, & libadwaita dependency versions
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 07 Mar 2023 18:59:38 -0500
+
+libpanel (1.1.1-1) experimental; urgency=medium
+
+  * New upstream release
+  * debian/libpanel-1-1.symbols: Add new symbols
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 16 Feb 2023 08:01:57 -0500
+
+libpanel (1.0.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Fri, 18 Nov 2022 15:00:04 -0500
+
+libpanel (1.0.1-1) unstable; urgency=medium
+
+  [ Jeremy Bicha ]
+  * New upstream release
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 12 Oct 2022 14:26:02 -0400
+
+libpanel (1.0.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control.in: Add Breaks for gnome-builder << 43~rc
+  * debian/libpanel-common.install: Install translations
+  * debian/libpanel-1-1.symbols: Update
+  * Drop patch: applied in new release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 19 Sep 2022 17:15:04 -0400
+
+libpanel (1.0~alpha1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Add patch to keep using gtk4 4.6 for now
+  * debian/libpanel-1-1.symbols: Update
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 16 Aug 2022 07:37:55 -0400
+
+libpanel (1.0~alpha-1) unstable; urgency=medium
+
+  * Initial release (Closes: #1016606)
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 03 Aug 2022 17:27:15 -0400
