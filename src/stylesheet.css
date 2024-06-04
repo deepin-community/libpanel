@@ -1,0 +1,414 @@
+@define-color panel_border_color mix(alpha(@headerbar_shade_color,1), @theme_bg_color, .82);
+
+paneltogglebutton.drag-active button:not(:checked) {
+  background: alpha(@accent_bg_color, .25);
+}
+
+panelframeheaderbar {
+  min-height: 38px;
+  padding: 2px;
+}
+panelframe panelframeheaderbar,
+paneldockchild.center panelgrid > panelpaned > panelresizer:first-child:last-child > panelgridcolumn > panelpaned panelresizer:first-child:last-child panelframeheaderbar {
+  border-top: 2px solid transparent;
+  border-bottom: 1px solid alpha(@borders,.6);
+}
+panelframe.has-focus panelframeheaderbar {
+  border-top: 2px solid @accent_bg_color;
+}
+panelframeheaderbar > box {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+panelframeheaderbar button:not(:hover):not(:checked) {
+  background: transparent;
+}
+panelframeheaderbar button {
+  padding: 2px 6px;
+  margin: 1px;
+  font-weight: normal;
+  border-radius: 7px;
+}
+panelgrid panelframeheaderbar .controls {
+  margin-right: 4px;
+}
+panelgrid panelresizer:last-child > panelgridcolumn panelframeheaderbar .controls {
+  /* align with window close button on right-most */
+  margin-right: 8px;
+}
+panelframeheaderbar .controls button.circular {
+  padding: 0px;
+  margin: 0px;
+  min-height: 24px;
+  min-width: 24px;
+  border-radius: 9999px;
+}
+panelframeheaderbar .controls button.circular image {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+paneldockchild.end panelpaned.vertical panelresizer:first-child panelframe panelframeswitcher,
+paneldockchild.start panelpaned.vertical panelresizer:first-child panelframe panelframeswitcher {
+  border-bottom: 1px solid alpha(@borders,.6);
+}
+panelpaned panelframe panelframeswitcher:backdrop {
+  filter: opacity(.5);
+  transition: 200ms ease-in-out;
+}
+panelpaned.horizontal panelframe panelframeswitcher {
+  padding: 2px;
+  min-width: 40px;
+}
+panelpaned.vertical panelframe panelframeswitcher {
+  padding: 2px;
+  min-height: 40px;
+}
+panelpaned.vertical panelframe panelframeswitcher button {
+  padding: 2px 6px;
+  background-clip: padding-box;
+}
+panelpaned.horizontal panelframe panelframeswitcher button {
+  padding: 6px 2px;
+  background-clip: padding-box;
+}
+panelframe panelframeswitcher button {
+  border-radius: 10px;
+  /* use border instead of margin so that there are no gaps
+   * when dragging across buttons. This helps things feel a
+   * bit more solid when doing DnD.
+   */
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+panelframe panelframeswitcher button:not(:hover):not(:checked):not(:active) {
+  background: transparent;
+  background-clip: padding-box;
+  color: alpha(currentColor, 0.75);
+}
+panelframeswitcher.drop-indicator {
+  color: shade(@theme_selected_bg_color,0.8);
+}
+
+panelframe .frameheader .action-bar popover.menu.pages-popover row {
+  padding: 0 6px 0 10px;
+  border-radius: 6px;
+  min-width: 40px;
+  min-height: 32px;
+}
+panelframe .frameheader .action-bar popover.menu.pages-popover row:selected:not(:hover) {
+  background: transparent;
+}
+panelframe .frameheader .action-bar popover.menu.pages-popover row check {
+  opacity: 0;
+}
+panelframe .frameheader .action-bar popover.menu.pages-popover row:selected check {
+  opacity: 1;
+}
+panelframe .frameheader .action-bar popover.menu.pages-popover row .close-button {
+  padding: 0;
+  margin: 3px 0;
+  min-width: 24px;
+  min-height: 24px;
+  border-radius: 99px;
+  border: none;
+  box-shadow: none;
+  background: none;
+  color: transparent;
+}
+panelframe .frameheader .action-bar popover.menu.pages-popover row:hover .close-button {
+  color: @theme_fg_color;
+}
+panelframe .frameheader .action-bar popover.menu.pages-popover row .close-button:hover {
+  background: alpha(black, .08);
+}
+panelframe .frameheader .action-bar popover.menu.pages-popover row .close-button:active {
+  background: alpha(black, .15);
+}
+panelframe .frameheader tab > button.tab-close-button {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+
+panelstatusbar {
+  min-height: 24px;
+  font-size: 0.9em;
+  padding-top: 1px;
+  box-shadow: inset 0 1px @headerbar_shade_color;
+  background: @headerbar_bg_color;
+  color: @headerbar_fg_color;
+}
+panelstatusbar:backdrop {
+  background: @headerbar_backdrop_color;
+  transition: 200ms ease-in-out;
+}
+panelstatusbar > * {
+  border-right: 1px solid @borders;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+panelstatusbar:backdrop > * {
+  filter: opacity(.5);
+  transition: 200ms ease-in-out;
+}
+panelstatusbar > *:last-child {
+  border-right: none;
+}
+panelstatusbar paneltogglebutton,
+panelstatusbar > menubutton,
+panelstatusbar > dropdown {
+  padding: 0;
+}
+panelstatusbar paneltogglebutton button,
+panelstatusbar > dropdown > button,
+panelstatusbar > menubutton > button,
+panelstatusbar > button {
+  min-width: 8px;
+  border-radius: 0;
+  padding: 0 9px;
+}
+panelstatusbar.rounded > button:first-child,
+panelstatusbar.rounded > dropdown:first-child > button,
+panelstatusbar.rounded > menubutton:first-child > button,
+panelstatusbar.rounded > paneltogglebutton:first-child button {
+  border-bottom-left-radius: 12px;
+}
+
+panelstatusbar.rounded > button:last-child,
+panelstatusbar.rounded > dropdown:last-child > button,
+panelstatusbar.rounded > menubutton:last-child > button,
+panelstatusbar.rounded > paneltogglebutton:last-child button {
+  border-bottom-right-radius: 12px;
+}
+paneldock.start-revealed paneldockchild.bottom panelstatusbar.rounded > button:first-child,
+paneldock.start-revealed paneldockchild.bottom panelstatusbar.rounded > dropdown:first-child > button,
+paneldock.start-revealed paneldockchild.bottom panelstatusbar.rounded > menubutton:first-child > button,
+paneldock.start-revealed paneldockchild.bottom panelstatusbar.rounded > paneltogglebutton:first-child button {
+  border-bottom-left-radius: 0;
+}
+paneldock.end-revealed paneldockchild.bottom panelstatusbar.rounded > button:last-child,
+paneldock.end-revealed paneldockchild.bottom panelstatusbar.rounded > dropdown:last-child > button,
+paneldock.end-revealed paneldockchild.bottom panelstatusbar.rounded > menubutton:last-child > button,
+paneldock.end-revealed paneldockchild.bottom panelstatusbar.rounded > paneltogglebutton:last-child button {
+  border-bottom-right-radius: 0;
+}
+panelstatusbar paneltogglebutton button,
+panelstatusbar > dropdown > button,
+panelstatusbar > menubutton > button,
+panelstatusbar > button {
+  background: transparent;
+}
+panelstatusbar paneltogglebutton button:hover,
+panelstatusbar > dropdown > button:hover,
+panelstatusbar > menubutton > button:hover,
+panelstatusbar > button:hover {
+  background: alpha(currentColor, .07);
+}
+panelstatusbar paneltogglebutton button:active,
+panelstatusbar paneltogglebutton button.keyboard-activating,
+panelstatusbar > dropdown > button:hover,
+panelstatusbar > dropdown > button.keyboard-activating,
+panelstatusbar > menubutton > button:hover,
+panelstatusbar > menubutton > button.keyboard-activating,
+panelstatusbar > button:hover,
+panelstatusbar > button.keyboard-activating {
+  background: alpha(currentColor, .16);
+}
+panelstatusbar paneltogglebutton button:checked,
+panelstatusbar > dropdown > button:checked,
+panelstatusbar > menubutton > button:checked,
+panelstatusbar > button:checked {
+  background: alpha(currentColor, .1);
+}
+panelstatusbar paneltogglebutton button:checked:hover,
+panelstatusbar > dropdown > button:checked:hover,
+panelstatusbar > menubutton > button:checked:hover,
+panelstatusbar > button:hover {
+  background: alpha(currentColor, .13);
+}
+panelstatusbar paneltogglebutton button:checked:active,
+panelstatusbar paneltogglebutton button:checked.keyboard-activating,
+panelstatusbar > dropdown > button:checked:hover,
+panelstatusbar > dropdown > button:checked.keyboard-activating,
+panelstatusbar > menubutton > button:checked:hover,
+panelstatusbar > menubutton > button:checked.keyboard-activating,
+panelstatusbar > button:hover,
+panelstatusbar > button.keyboard-activating {
+  background: alpha(currentColor, .19);
+}
+panelstatusbar > dropdown > button label,
+panelstatusbar > menubutton > button label,
+panelstatusbar > button label {
+  font-weight: normal;
+}
+
+/* Style statusbar correctly within a toolbar view */
+.top-bar panelstatusbar,
+.bottom-bar panelstatusbar {
+  padding-top: 0px;
+  box-shadow: none;
+  background: none;
+  color: inherit;
+}
+.top-bar panelstatusbar:backdrop,
+.bottom-bar panelstatusbar:backdrop {
+  background: none;
+  transition: none;
+}
+.top-bar panelstatusbar:backdrop > *,
+.bottom-bar panelstatusbar:backdrop > * {
+  filter: none;
+  transition: none;
+}
+
+panelframe panelframetabbar {
+  border-bottom: 1px solid alpha(@borders,.6);
+  min-height: 44px;
+}
+panelframe panelframetabbar:backdrop {
+  color: alpha(currentColor, .5);
+}
+panelframe panelframetabbar > overlay > box.focus-handle,
+paneldockchild.center panelgrid > panelpaned > panelresizer:first-child:last-child > panelgridcolumn > panelpaned panelresizer:first-child:last-child panelframetabbar box.focus-handle {
+  min-height: 2px;
+  background: transparent;
+}
+panelframe.has-focus panelframetabbar > overlay > box.focus-handle {
+  background: @accent_bg_color;
+}
+panelframe panelframetabbar tabbox tab button {
+  min-height: 0;
+}
+panelframe panelframetabbar button.frame-close-button {
+  min-width: 28px;
+  min-height: 28px;
+}
+panelframe panelframetabbar tabbox {
+  padding: 0;
+}
+panelframe panelframetabbar tabbox tabboxchild {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+panelframe panelframetabbar .end-action {
+  padding: 0;
+}
+
+splitbutton.omnibar > button {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+
+/* frame switcher buttons */
+panelframeheaderbar button {
+  background-color: transparent;
+}
+panelframeheaderbar button:checked,
+panelframeswitcher button:checked {
+ background-color: alpha(currentColor, .125);
+}
+panelframeheaderbar button:hover,
+panelframeswitcher button:hover {
+ background-color: alpha(currentColor, .1);
+}
+panelframeheaderbar button:hover:checked,
+panelframeswitcher button:hover:checked {
+ background-color: alpha(currentColor, .15);
+}
+panelframeheaderbar button:active:hover,
+panelframeswitcher button:active:hover {
+ background-color: alpha(currentColor, .25);
+}
+
+
+
+panelthemeselector {
+  margin: 9px;
+}
+panelthemeselector checkbutton {
+  padding: 0;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 1px;
+  background-clip: content-box;
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1px @borders;
+}
+panelthemeselector checkbutton.follow:checked,
+panelthemeselector checkbutton.light:checked,
+panelthemeselector checkbutton.dark:checked {
+  box-shadow: inset 0 0 0 2px @theme_selected_bg_color;
+}
+panelthemeselector checkbutton.follow {
+  background-image: linear-gradient(to bottom right, #fff 49.99%, #202020 50.01%);
+}
+panelthemeselector checkbutton.light {
+  background-color: #fff;
+}
+panelthemeselector checkbutton.dark {
+  background-color: #202020;
+}
+panelthemeselector checkbutton radio {
+  -gtk-icon-source: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+  min-width: 12px;
+  min-height: 12px;
+  transform: translate(27px, 14px);
+  padding: 2px;
+}
+panelthemeselector checkbutton radio:checked {
+  -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+
+splitbutton.omnibar {
+  background: alpha(currentColor, 0.075);
+}
+
+
+panelframe:drop(active) {
+  box-shadow: none;
+}
+panelframe paneldropcontrols {
+  transition-property: background, border;
+  transition-duration: 300ms;
+  border-radius: 7px;
+  margin: 1px;
+}
+panelframe paneldropcontrols {
+  background: alpha(@accent_bg_color, .1);
+}
+panelframe paneldropcontrols:drop(active) {
+  background: alpha(@accent_bg_color, .3);
+  box-shadow: inset 0 0 0 1px @accent_bg_color;
+}
+paneldropcontrols button {
+  border-radius: 11px;
+  color: alpha(@theme_selected_fg_color, .8);
+  background-color: @accent_bg_color;
+  box-shadow: 0 3px 5px rgba(0,0,0,.2);
+  padding: 0;
+}
+paneldropcontrols button.circular {
+  border-radius: 9999px;
+}
+paneldropcontrols button:drop(active) {
+  background-color: mix(@accent_bg_color, @accent_fg_color, .3);
+  color: @theme_selected_fg_color;
+}
+
+panelprogressicon {
+  color: @accent_bg_color;
+}
+
+panelframeswitcher button {
+  background-clip: padding-box;
+}
